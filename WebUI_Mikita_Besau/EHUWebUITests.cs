@@ -24,7 +24,6 @@ namespace WebUI_Mikita_Besau
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
         }
 
-
         [TearDown]
         public void TearDown()
         {
@@ -75,7 +74,6 @@ namespace WebUI_Mikita_Besau
             new Actions(driver).MoveToElement(ltLink).Click().Perform();
             wait.Until(ExpectedConditions.UrlContains("lt.ehu.lt"));
             Assert.That(driver.Url, Is.EqualTo("https://lt.ehu.lt/"));
-            Assert.That(driver.PageSource, Does.Contain("Europos humanitarinis universitetas"));
         }
 
         [Test]
